@@ -5,7 +5,7 @@ namespace TaskApp;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class TaskServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
