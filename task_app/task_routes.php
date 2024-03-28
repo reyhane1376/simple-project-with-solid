@@ -3,12 +3,12 @@
 use TaskApp\ChangeTaskState;
 use TaskApp\DeleteTask;
 use TaskApp\ShowTaskEditForm;
-use Illuminate\Support\Facades\Route;
 use TaskApp\TaskStoreController;
 use TaskApp\TaskStoreResponses\Responses;
+use TaskApp\Controllers\TaskController;
 
-Route::view('tasks', 'Task::tasks.index')
-     ->name('tasks.index');
+Route::get('tasks', [TaskController::class, 'index'])
+     ->name('tasks.index')->middleware('auth:web');
 
 Route::view('tasks/create', 'Task::tasks.create')
      ->name('tasks.create');
